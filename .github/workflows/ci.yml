@@ -31,7 +31,7 @@ jobs:
             args: "-f gcc"  # For problem matchers
           - testenv: yamllint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: actions/cache@v2
         with:
           path: |
@@ -87,7 +87,7 @@ jobs:
         - /home/runner/work/_temp/:/home/runner/work/_temp/
       options: --privileged --tty
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Set up problem matchers
         run: "python scripts/dev/ci/problemmatchers.py py38 ${{ runner.temp }}"
       - run: tox -e py38
@@ -148,7 +148,7 @@ jobs:
             python: 3.7
     runs-on: "${{ matrix.os }}"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - uses: actions/cache@v2
         with:
           path: |
@@ -188,7 +188,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           # We must fetch at least the immediate parents so that if this is
           # a pull request then we can checkout the head.
